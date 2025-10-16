@@ -6,14 +6,17 @@ AI-powered Retrieval-Augmented Generation (RAG) system that converts PostgreSQL 
 
 ## 🎥 Demo Videos
 
-> **Note**: Demo videos are available in the repository. Download them to view:
-> - [demo-video1.MOV](./demo-video1.MOV) - Building Knowledge Graph
-> - [demo-video2.MOV](./demo-video2.MOV) - AI Chat Agent Query
+### 📺 Video 1: Building Knowledge Graph from PostgreSQL
+[![Watch Demo 1](https://img.youtube.com/vi/zWcS3tH2NoQ/maxresdefault.jpg)](https://youtu.be/zWcS3tH2NoQ)
 
-### Watch Online
-For the best viewing experience, you can also watch the demos here:
-- **Live Demo**: Deploy and try it yourself (see Quick Start below)
-- **YouTube** *(coming soon)*
+**[▶️ Watch on YouTube](https://youtu.be/zWcS3tH2NoQ)**
+
+---
+
+### 📺 Video 2: AI Chat Agent Query Interface
+[![Watch Demo 2](https://img.youtube.com/vi/leuOQQ23V6Q/maxresdefault.jpg)](https://youtu.be/leuOQQ23V6Q)
+
+**[▶️ Watch on YouTube](https://youtu.be/leuOQQ23V6Q)**
 
 ---
 
