@@ -4,10 +4,10 @@ FROM neo4j:5.15-community as neo4j-base
 FROM python:3.11-slim
 
 # Install system dependencies
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
     wget \
-    openjdk-17-jre \
+    default-jre \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy Neo4j from base image
