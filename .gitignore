@@ -20,4 +20,6 @@ faiss_index.bin
 index_metadata.pkl
 *.bin
 *.pkl
+server.log
+nohup.out
 

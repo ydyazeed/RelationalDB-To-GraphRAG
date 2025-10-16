@@ -2,6 +2,15 @@
 
 AI-powered Retrieval-Augmented Generation (RAG) system that converts PostgreSQL databases into queryable knowledge graphs with semantic search.
 
+**Live Demo**: [Frontend](https://your-app.vercel.app) | [API](https://your-app.onrender.com)
+
+## 📚 Documentation
+
+- **[COMPLETE_GUIDE.md](./COMPLETE_GUIDE.md)** - Full system guide
+- **[DEPLOYMENT.md](./DEPLOYMENT.md)** - Deploy to Render & Vercel
+- **[QUICK_START.md](./QUICK_START.md)** - Quick commands
+- **[frontend/README.md](./frontend/README.md)** - Frontend docs
+
 ## 🚀 Quick Start
 
 ### 1. Clone the Repository

@@ -338,38 +338,53 @@ async def build_graph(request: BuildGraphRequest, background_tasks: BackgroundTa
             # Update environment
             os.environ["DATABASE_URL"] = conn_string
             
+            # Get current working directory
+            work_dir = os.path.dirname(os.path.abspath(__file__)) if os.path.dirname(__file__) else os.getcwd()
+            
             # 1. Extract schema
             print("1. Extracting schema...")
             result = subprocess.run(
-                ["python3", "schema_extractor.py"],
-                capture_output=True,
-                text=True,
-                cwd=os.path.dirname(__file__)
+                [sys.executable, "schema_extractor.py"],
+                cwd=work_dir,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                text=True
             )
             if result.returncode != 0:
-                raise Exception(f"Schema extraction failed: {result.stderr}")
+                error_msg = result.stderr or result.stdout or "Unknown error"
+                print(f"Schema extraction error: {error_msg}")
+                raise Exception(f"Schema extraction failed: {error_msg}")
+            print("✓ Schema extracted successfully")
             
             # 2. Generate ontology
             print("2. Generating ontology...")
             result = subprocess.run(
-                ["python3", "schema_to_ontology.py"],
-                capture_output=True,
-                text=True,
-                cwd=os.path.dirname(__file__)
+                [sys.executable, "schema_to_ontology.py"],
+                cwd=work_dir,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                text=True
             )
             if result.returncode != 0:
-                raise Exception(f"Ontology generation failed: {result.stderr}")
+                error_msg = result.stderr or result.stdout or "Unknown error"
+                print(f"Ontology generation error: {error_msg}")
+                raise Exception(f"Ontology generation failed: {error_msg}")
+            print("✓ Ontology generated successfully")
             
             # 3. Build Neo4j graph
             print("3. Building Neo4j graph...")
             result = subprocess.run(
-                ["python3", "create_knowledge_graph.py", "--auto"],
-                capture_output=True,
-                text=True,
-                cwd=os.path.dirname(__file__)
+                [sys.executable, "create_knowledge_graph.py", "--auto"],
+                cwd=work_dir,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                text=True
             )
             if result.returncode != 0:
-                raise Exception(f"Graph creation failed: {result.stderr}")
+                error_msg = result.stderr or result.stdout or "Unknown error"
+                print(f"Graph creation error: {error_msg}")
+                raise Exception(f"Graph creation failed: {error_msg}")
+            print("✓ Neo4j graph created successfully")
             
             # 4. Build FAISS vector index
             print("4. Building vector index...")
@@ -380,15 +395,20 @@ async def build_graph(request: BuildGraphRequest, background_tasks: BackgroundTa
             
             indexer.build_index_from_neo4j(neo4j_uri, neo4j_user, neo4j_password)
             indexer.save_index()
+            print("✓ Vector index built successfully")
             
             # Update global state
             vector_indexer = indexer
             graph_built = True
             
-            print("✓ Graph build pipeline completed successfully!")
+            print("="*50)
+            print("✓ GRAPH BUILD PIPELINE COMPLETED SUCCESSFULLY!")
+            print("="*50)
             
         except Exception as e:
-            print(f"✗ Error in build pipeline: {e}")
+            print("="*50)
+            print(f"✗ ERROR IN BUILD PIPELINE: {e}")
+            print("="*50)
             graph_built = False
     
     # Run in background
