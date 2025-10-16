@@ -1,0 +1,43 @@
+/Users/yazeedshamsudeen/Projects/SchemaExtractor/rag_api_server.py:556: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("shutdown")
+INFO:     Started server process [69105]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1760598124.039579 5978529 alts_credentials.cc:93] ALTS creds ignored. Not running on GCP and untrusted ALTS is not enabled.
+E0000 00:00:1760598124.076014 5978529 alts_credentials.cc:93] ALTS creds ignored. Not running on GCP and untrusted ALTS is not enabled.
+I0000 00:00:1760598167.073283 5979307 fork_posix.cc:71] Other threads are currently calling into gRPC, skipping fork() handlers
+  ✓ Index loaded with 34 vectors
+INFO:     127.0.0.1:58969 - "POST /chat HTTP/1.1" 200 OK
+E0000 00:00:1760598191.986528 5978529 alts_credentials.cc:93] ALTS creds ignored. Not running on GCP and untrusted ALTS is not enabled.
+E0000 00:00:1760598192.014480 5978529 alts_credentials.cc:93] ALTS creds ignored. Not running on GCP and untrusted ALTS is not enabled.
+INFO:     127.0.0.1:59124 - "POST /chat HTTP/1.1" 200 OK
+E0000 00:00:1760598215.585185 5978529 alts_credentials.cc:93] ALTS creds ignored. Not running on GCP and untrusted ALTS is not enabled.
+E0000 00:00:1760598215.614243 5978529 alts_credentials.cc:93] ALTS creds ignored. Not running on GCP and untrusted ALTS is not enabled.
+INFO:     127.0.0.1:59192 - "POST /chat HTTP/1.1" 200 OK
+E0000 00:00:1760598230.749959 5978529 alts_credentials.cc:93] ALTS creds ignored. Not running on GCP and untrusted ALTS is not enabled.
+E0000 00:00:1760598230.787515 5978529 alts_credentials.cc:93] ALTS creds ignored. Not running on GCP and untrusted ALTS is not enabled.
+INFO:     127.0.0.1:59206 - "POST /chat HTTP/1.1" 200 OK
+E0000 00:00:1760598315.569709 5978529 alts_credentials.cc:93] ALTS creds ignored. Not running on GCP and untrusted ALTS is not enabled.
+E0000 00:00:1760598315.621007 5978529 alts_credentials.cc:93] ALTS creds ignored. Not running on GCP and untrusted ALTS is not enabled.
+INFO:     127.0.0.1:60415 - "POST /chat HTTP/1.1" 200 OK
+E0000 00:00:1760598456.455076 5978529 alts_credentials.cc:93] ALTS creds ignored. Not running on GCP and untrusted ALTS is not enabled.
+E0000 00:00:1760598456.506494 5978529 alts_credentials.cc:93] ALTS creds ignored. Not running on GCP and untrusted ALTS is not enabled.
+INFO:     127.0.0.1:60546 - "POST /chat HTTP/1.1" 200 OK
+E0000 00:00:1760598500.235757 5978529 alts_credentials.cc:93] ALTS creds ignored. Not running on GCP and untrusted ALTS is not enabled.
+E0000 00:00:1760598500.283208 5978529 alts_credentials.cc:93] ALTS creds ignored. Not running on GCP and untrusted ALTS is not enabled.
+Received notification from DBMS server: <GqlStatusObject gql_status='01N51', status_description='warn: relationship type does not exist. The relationship type `BOUGHT` does not exist in database `neo4j`. Verify that the spelling is correct.', position=<SummaryInputPosition line=1, column=22, offset=21>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 21, 'line': 1, 'column': 22}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: 'MATCH (c:Customer)-[:BOUGHT]->(p:Product)-[:BELONGS_TO]->(cat:Category) WHERE cat.name = "Electronics" RETURN c.name AS CustomerName LIMIT 10'
+Received notification from DBMS server: <GqlStatusObject gql_status='01N51', status_description='warn: relationship type does not exist. The relationship type `BELONGS_TO` does not exist in database `neo4j`. Verify that the spelling is correct.', position=<SummaryInputPosition line=1, column=45, offset=44>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 44, 'line': 1, 'column': 45}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: 'MATCH (c:Customer)-[:BOUGHT]->(p:Product)-[:BELONGS_TO]->(cat:Category) WHERE cat.name = "Electronics" RETURN c.name AS CustomerName LIMIT 10'
+INFO:     127.0.0.1:60609 - "POST /chat HTTP/1.1" 200 OK
+E0000 00:00:1760598557.271354 5978529 alts_credentials.cc:93] ALTS creds ignored. Not running on GCP and untrusted ALTS is not enabled.
+E0000 00:00:1760598557.321820 5978529 alts_credentials.cc:93] ALTS creds ignored. Not running on GCP and untrusted ALTS is not enabled.
+Received notification from DBMS server: <GqlStatusObject gql_status='01N51', status_description='warn: relationship type does not exist. The relationship type `BOUGHT` does not exist in database `neo4j`. Verify that the spelling is correct.', position=<SummaryInputPosition line=2, column=22, offset=22>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 22, 'line': 2, 'column': 22}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "\nMATCH (c:Customer)-[:BOUGHT]->(p1:Product)\nWHERE p1.category = 'Smartphone'\nMATCH (c)-[:BOUGHT]->(p2:Product)\nWHERE p2 <> p1\nRETURN DISTINCT p2.name AS OtherProducts\n LIMIT 10"
+Received notification from DBMS server: <GqlStatusObject gql_status='01N52', status_description='warn: property key does not exist. The property `category` does not exist in database `neo4j`. Verify that the spelling is correct.', position=<SummaryInputPosition line=3, column=10, offset=53>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 53, 'line': 3, 'column': 10}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "\nMATCH (c:Customer)-[:BOUGHT]->(p1:Product)\nWHERE p1.category = 'Smartphone'\nMATCH (c)-[:BOUGHT]->(p2:Product)\nWHERE p2 <> p1\nRETURN DISTINCT p2.name AS OtherProducts\n LIMIT 10"
+Received notification from DBMS server: <GqlStatusObject gql_status='01N51', status_description='warn: relationship type does not exist. The relationship type `BOUGHT` does not exist in database `neo4j`. Verify that the spelling is correct.', position=<SummaryInputPosition line=4, column=13, offset=89>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 89, 'line': 4, 'column': 13}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "\nMATCH (c:Customer)-[:BOUGHT]->(p1:Product)\nWHERE p1.category = 'Smartphone'\nMATCH (c)-[:BOUGHT]->(p2:Product)\nWHERE p2 <> p1\nRETURN DISTINCT p2.name AS OtherProducts\n LIMIT 10"
+INFO:     127.0.0.1:60649 - "POST /chat HTTP/1.1" 200 OK
